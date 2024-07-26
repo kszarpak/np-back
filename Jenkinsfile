@@ -32,7 +32,7 @@ pipeline {
                 script {
                   // Prepare basic image for application
                   dockerTag = "${env.BUILD_ID}.${env.GIT_COMMIT.take(7)}"
-                  applicationImage = docker.build("kornzysiek/backend:$dockerTag",".")
+                  applicationImage = docker.build("kszarpak/backend:$dockerTag",".")
                 }
             }
         }
