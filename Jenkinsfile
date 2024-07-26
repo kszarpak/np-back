@@ -48,13 +48,6 @@ pipeline {
         }
     }
     post {
-        success {
-            build job: 'selenium', 
-                  parameters: [
-                      string(name: 'backendDockerTag', value: dockerTag)
-                  ],
-                  wait: false
-        }
         always {
             junit testResults: "test-results/*.xml"
             cleanWs()
